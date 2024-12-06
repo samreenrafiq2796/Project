@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2024 at 02:30 PM
+-- Generation Time: Dec 06, 2024 at 02:43 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,11 +39,9 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`Id`, `Name`, `Country`, `Record Insertion Time`) VALUES
-(1, '  saba', 'DE ', '2024-11-22 18:31:09'),
-(2, '  saba', 'DE ', '2024-11-22 18:31:09'),
-(3, '  saba', 'DE ', '2024-11-22 18:31:09'),
 (4, '  Loreal', 'United States ', '2024-11-29 18:24:04'),
-(5, '  Maybelline', 'United Kingdom ', '2024-11-29 18:24:12');
+(5, '  Maybelline', 'United Kingdom ', '2024-11-29 18:24:12'),
+(6, '  Demo', 'Australia ', '2024-12-02 17:28:18');
 
 -- --------------------------------------------------------
 
@@ -170,6 +168,33 @@ CREATE TABLE `tbl_contact` (
 INSERT INTO `tbl_contact` (`Id`, `Name`, `Email`, `Msg`, `Purpose`, `Record_time`) VALUES
 (1, 'Demo', 'demo@gmail.com', 'lorem ipsum,', 'Complain', '2024-11-27 17:27:53');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_product`
+--
+
+CREATE TABLE `tbl_product` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Price` int(11) NOT NULL,
+  `rating` varchar(50) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `Image` varchar(250) NOT NULL,
+  `Brandid` int(11) NOT NULL,
+  `CategoryId` int(11) NOT NULL,
+  `TimeOfRecord` varchar(50) NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tbl_product`
+--
+
+INSERT INTO `tbl_product` (`Id`, `Name`, `Price`, `rating`, `quantity`, `description`, `Image`, `Brandid`, `CategoryId`, `TimeOfRecord`) VALUES
+(4, 'Embroidered | Cotton Viscose', 2300, '4', 2, 'loremi ipsum', '../ProductImage/eet24377_yellow_2.jpg', 6, 3, '2024-12-06 17:28:37'),
+(6, 'Shan Bombay Biryani Masala - 60 gm', 44, '4', 2, 'dtdfg', '../ProductImage/img_v_1.jpg', 6, 5, '2024-12-06 18:28:00');
+
 --
 -- Indexes for dumped tables
 --
@@ -219,6 +244,15 @@ ALTER TABLE `tbl_contact`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD PRIMARY KEY (`Id`),
+  ADD UNIQUE KEY `Name` (`Name`),
+  ADD KEY `Brandid` (`Brandid`),
+  ADD KEY `CategoryId` (`CategoryId`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -226,7 +260,7 @@ ALTER TABLE `tbl_contact`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -238,7 +272,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `db_about`
 --
 ALTER TABLE `db_about`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `db_faq`
@@ -263,6 +297,23 @@ ALTER TABLE `db_websiteinfo`
 --
 ALTER TABLE `tbl_contact`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`Brandid`) REFERENCES `brand` (`Id`),
+  ADD CONSTRAINT `tbl_product_ibfk_2` FOREIGN KEY (`CategoryId`) REFERENCES `category` (`Id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
