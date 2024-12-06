@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-profile">
-      <a href="#" class="nav-link">
+      <a href="index.php" class="nav-link">
         <div class="nav-profile-image">
           <img src="./assets/images/faces/face1.jpg" alt="profile" />
           <span class="login-status online"></span>
@@ -56,17 +56,11 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+      <a class="nav-link" href="showproduct.php">
         <span class="menu-title">Product</span>
         <i class="mdi mdi-table-large menu-icon"></i>
       </a>
-      <div class="collapse" id="tables">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.php">Basic table</a>
-          </li>
-        </ul>
-      </div>
+     
     </li>
     <li class="nav-item">
       <a class="nav-link" href="show_pp.php" aria-controls="auth">
