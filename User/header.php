@@ -70,44 +70,13 @@
             <a class="nav-link me-4 active" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-4" href="index.html">About</a>
+            <a class="nav-link me-4" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-4" href="index.html">Shop</a>
+            <a class="nav-link me-4" href="shop.php">Shop</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link me-4" href="index.html">Blogs</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-              aria-expanded="false">Pages</a>
-            <ul class="dropdown-menu animate slide border">
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">About</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Shop</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Single Product</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Cart</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Checkout</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Blog</a>
-              </li>
-              <li>
-                <a href="index.html" class="dropdown-item fw-light">Single Post</a>
-              </li>
-              <li>
-                <a href="contact.php" class="dropdown-item fw-light">Contact</a>
-              </li>
-            </ul>
-          </li>
+         
+         
           <li class="nav-item">
             <a class="nav-link me-4" href="contact.php">Contact</a>
           </li>
