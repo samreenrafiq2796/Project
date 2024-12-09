@@ -12,7 +12,7 @@
     <?php    }
     }
     else{
-        header("location: ../show_about.php");
+        header("location: ../showproduct.php");
     }
 
 ?>
